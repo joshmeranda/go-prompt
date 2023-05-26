@@ -3,7 +3,7 @@ package prompt
 import (
 	"strings"
 
-	"github.com/c-bata/go-prompt/internal/debug"
+	"github.com/joshmerana/go-prompt/internal/debug"
 	runewidth "github.com/mattn/go-runewidth"
 )
 
