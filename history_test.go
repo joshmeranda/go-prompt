@@ -9,7 +9,7 @@ func TestHistoryClear(t *testing.T) {
 	h := NewHistory()
 	h.Add("foo")
 	h.Clear()
-	expected := &History{
+	expected := &history{
 		histories: []string{"foo"},
 		tmp:       []string{"foo", ""},
 		selected:  1,
@@ -22,7 +22,7 @@ func TestHistoryClear(t *testing.T) {
 func TestHistoryAdd(t *testing.T) {
 	h := NewHistory()
 	h.Add("echo 1")
-	expected := &History{
+	expected := &history{
 		histories: []string{"echo 1"},
 		tmp:       []string{"echo 1", ""},
 		selected:  1,

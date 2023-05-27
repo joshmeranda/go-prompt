@@ -197,11 +197,20 @@ func OptionMaxSuggestion(x uint16) Option {
 	}
 }
 
-// OptionHistory to set history expressed by string array.
-func OptionHistory(x []string) Option {
+// OptionHistoryStrings to set history with a string slice.
+func OptionHistoryStrings(x []string) Option {
 	return func(p *Prompt) error {
-		p.history.histories = x
+		p.history = NewHistory()
+		p.history.Add(x...)
 		p.history.Clear()
+		return nil
+	}
+}
+
+// OptionHistory to set history.
+func OptionHistory(h History) Option {
+	return func(p *Prompt) error {
+		p.history = h
 		return nil
 	}
 }

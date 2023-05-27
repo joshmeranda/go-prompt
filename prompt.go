@@ -27,7 +27,7 @@ type Prompt struct {
 	buf               *Buffer
 	renderer          *Render
 	executor          Executor
-	history           *History
+	history           History
 	completion        *CompletionManager
 	keyBindings       []KeyBind
 	ASCIICodeBindings []ASCIICodeBind
